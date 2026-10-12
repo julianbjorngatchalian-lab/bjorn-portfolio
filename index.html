@@ -301,7 +301,7 @@ section { padding-block: 64px; border-top: 1px solid var(--line); }
 .mini h3 { font-size: 1.25rem; font-weight: 700; }
 .mini p { color: var(--muted); }
 .mini .shots { width: 100%; }
-.mini .shot-open img { max-height: 260px; }
+.mini .shot-open img { max-height: 260px; object-position: top; }
 .mini-sub strong { color: var(--ink); }
 
 
@@ -701,18 +701,20 @@ section { padding-block: 64px; border-top: 1px solid var(--line); }
 
       <div class="pair">
         <article class="mini">
-          <span class="pill pill-live">Live · in use</span>
+          <div class="shots" data-shots><figure class="shot"><button type="button" class="shot-open" aria-label="Open full size: Google Apps Script code for the home anniversary reminders (client names redacted)"><img src="img/anniversary-script.webp" alt="Google Apps Script code for the home anniversary reminders (client names redacted)" loading="lazy"></button></figure></div>
+          <span class="pill pill-live">Live · in use · Apps Script</span>
           <h3>Home anniversary reminders</h3>
           <p>For a realtor client: turns a closings spreadsheet into anniversary reminders on the team calendar, so greeting cards go out on time.</p>
           <div class="chips"><span class="chip">Apps Script</span><span class="chip">Google Sheets</span><span class="chip">Google Calendar</span></div>
         </article>
         <article class="mini mini-dev">
-          <div class="shots" data-shots><figure class="shot"><button type="button" class="shot-open" aria-label="Open full size: n8n canvas: weekly report request, save and reminder"><img src="img/tc-weekly-report.webp" alt="n8n canvas: weekly report request, save and reminder" loading="lazy"></button></figure></div>
-          <span class="pill pill-dev">In progress · n8n</span>
+          <div class="shots" data-shots><div class="shot-tabs" role="tablist" aria-label="Transaction coordination builds"><button type="button" class="shot-tab" role="tab" aria-selected="true" data-i="0">Weekly report · n8n</button><button type="button" class="shot-tab" role="tab" aria-selected="false" data-i="1">Weekly comparator · Apps Script</button></div><figure class="shot"><button type="button" class="shot-open" aria-label="Open full size: n8n canvas: weekly report request, save and reminder"><img src="img/tc-weekly-report.webp" alt="n8n canvas: weekly report request, save and reminder" loading="lazy"></button></figure><figure class="shot" hidden><button type="button" class="shot-open" aria-label="Open full size: Apps Script code for the weekly comparator (folder ID redacted)"><img src="img/weekly-comparator.webp" alt="Apps Script code for the weekly comparator (folder ID redacted)" loading="lazy"></button></figure></div>
+          <span class="pill pill-dev">In progress · n8n + Apps Script</span>
           <h3>Transaction coordination automation</h3>
           <p>For a realtor client: automating the repeat tasks in my own transaction coordinator work, built so the whole team can run it.</p>
           <p class="mini-sub"><strong>First piece: weekly report process.</strong> Every Monday it emails the request for the weekly status report. When the reply arrives, it saves the Excel file to Drive, converts it to a Google Sheet and tells me it's ready. If no report has come in by Tuesday 3 PM, it sends me a reminder.</p>
-          <div class="chips"><span class="chip">n8n</span><span class="chip">Gmail</span><span class="chip">Google Drive</span><span class="chip">Google Sheets</span></div>
+          <p class="mini-sub"><strong>Second piece: weekly comparator.</strong> A custom "Run Weekly Report" menu in Google Sheets rolls last week's report into a history tab and sets up the current week, so the two can be compared.</p>
+          <div class="chips"><span class="chip">n8n</span><span class="chip">Apps Script</span><span class="chip">Gmail</span><span class="chip">Google Drive</span><span class="chip">Google Sheets</span></div>
         </article>
       </div>
     </div>
